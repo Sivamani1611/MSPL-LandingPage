@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="htmlcss bootstrap menu, navbar, mega menu examples" />
+<meta name="description" content="Navigation menu with submenu examples for any type of project, Bootstrap 4" />  
+
+<title>MSPL </title>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+<!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+<style type="text/css">
+    @media (min-width: 50px) {
+        .dropdown-menu .dropdown-toggle:after {
+            border-top: .3em solid transparent;
+            border-right: 0;
+            border-bottom: .3em solid transparent;
+            border-left: .3em solid;
+        }
+
+        .dropdown-menu .dropdown-menu {
+            margin-left: 0; margin-right: 0;
+        }
+
+        .dropdown-menu li {
+            position: relative;
+        }
+        .nav-item .submenu {
+            display: none;
+            position: absolute;
+            left: 100%; top: -7px;
+        }
+        .nav-item .submenu-left {
+            right: 100%; left: auto;
+        }
+
+        .dropdown-menu > li:hover { background-color: #f1f1f1 }
+        .dropdown-menu > li:hover > .submenu {
+            display: block;
+        }
+    }
+
+    .navbar-nav .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .navbar {
+        background-color: transparent;
+        opacity: 0.8; /* Adjust the opacity value as needed */
+        position: relative;
+        z-index: 1;
+    }
+
+    .video_container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: -10;
+        overflow: hidden;
+    }
+
+    .background-clip {
+        width: 100%;
+    }
+
+    /* Background video switching to portrait */
+    @media screen and (orientation: portrait) {
+        .background-clip{
+            height: 100vh !important;
+            width: auto !important;
+        }
+    }
+</style>
+
+<body class="bg-light">
+
+<header class="section-header py-4">
+    <!-- section-header.// -->
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">MSPL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Commands</a>
+                        <ul class="dropdown-menu">
+                                                    <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Start</a>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">CFO Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">CFO Finance KPI's</a></li>
+                                    <li><a class="dropdown-item" href="#">CFO Inventory KPI's</a></li>
+                                    <li><a class="dropdown-item" href="#">Expenditure</a></li>
+                                    <li><a class="dropdown-item" href="#">CFO Details</a></li>
+                                    <li><a class="dropdown-item" href="#">Current Assets and Liabilities</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Director Project Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Home</a></li>
+                                    <li><a class="dropdown-item" href="#">Safety</a></li>
+                                    <li><a class="dropdown-item" href="#">Statutory Approvals</a></li>
+                                    <li><a class="dropdown-item" href="#">Major Milestones</a></li>
+                                    <li><a class="dropdown-item" href="#">Critical Path</a></li>
+                                    <li><a class="dropdown-item" href="#">Detail Activities</a></li>
+                                    <li><a class="dropdown-item" href="#">Engineering Progress</a></li>
+                                    <li><a class="dropdown-item" href="#">Cost Overview</a></li>
+                                    <li><a class="dropdown-item" href="#">Procurement Progress</a></li>
+                                    <li><a class="dropdown-item" href="#">Manning Liquidation</a></li>
+                                    <li><a class="dropdown-item" href="#">Contractor Performance</a></li>
+                                    <li><a class="dropdown-item" href="#">Manpower</a></li>
+                                    <li><a class="dropdown-item" href="#">Construction</a></li>
+                                    <li><a class="dropdown-item" href="#">Learning Records</a></li>
+                                    <li><a class="dropdown-item" href="#">Issue Register</a></li>
+                                    <li><a class="dropdown-item" href="#">Site Progress Photo</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Directors Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Sales Summary</a></li>
+                                    <li><a class="dropdown-item" href="#">Production</a></li>
+                                    <li><a class="dropdown-item" href="#">Inventory KPIs</a></li>
+                                    <li><a class="dropdown-item" href="#">Finance KPIs</a></li>
+                                    <li><a class="dropdown-item" href="#">Purchase KPIs</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">HR Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Employee Headcount</a></li>
+                                    <li><a class="dropdown-item" href="#">Employee Separation</a></li>
+                                    <li><a class="dropdown-item" href="#">HR Budget vs Actuals</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">JMDR</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Pellet</a></li>
+                                    <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                    <li><a class="dropdown-item" href="#">Logistics</a></li>
+                                    <li><a class="dropdown-item" href="#">JMDR P and L</a></li>
+                                    <li><a class="dropdown-item" href="#">PBT Level Summary</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">JMDS</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Production Pellet</a></li>
+                                    <li><a class="dropdown-item" href="#">Production Mining</a></li>
+                                    <li><a class="dropdown-item" href="#">Procurement</a></li>
+                                    <li><a class="dropdown-item" href="#">Sales</a></li>
+                                    <li><a class="dropdown-item" href="#">Expenses</a></li>
+                                    <li><a class="dropdown-item" href="#">Ask Rate</a></li>
+                                    <li><a class="dropdown-item" href="#">JMDS P and L</a></li>
+                                    <li><a class="dropdown-item" href="#">Project Status</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Procurement Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Purchase Budget vs Actuals</a></li>
+                                    <li><a class="dropdown-item" href="#">Purchase Order Aging Analysis</a></li>
+                                    <li><a class="dropdown-item" href="#">Purchase Requisition Aging Analysis</a></li>
+                                    <li><a class="dropdown-item" href="#">Outstanding Advances</a></li>
+                                    <li><a class="dropdown-item" href="#">Material Type</a></li>
+                                    <li><a class="dropdown-item" href="#">Monthly Price Trends</a></li>
+                                    <li><a class="dropdown-item" href="#">MSME</a></li>
+                                    <li><a class="dropdown-item" href="#">RM Stock Quantity</a></li>
+                                    <li><a class="dropdown-item" href="#">RM open PO Quantity</a></li>
+                                    <li><a class="dropdown-item" href="#">PR to PO open Conversion</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">O and M Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Budget vs Actuals</a></li>
+                                    <li><a class="dropdown-item" href="#">Material Consumption</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Sales Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Sales Budget vs Actuals</a></li>
+                                    <li><a class="dropdown-item" href="#">Outstanding Amount</a></li>
+                                    <li><a class="dropdown-item" href="#">Pending Orders</a></li>
+                                    <li><a class="dropdown-item" href="#">Regionwise Sales</a></li>
+                                    <li><a class="dropdown-item" href="#">Area wise sales</a></li>
+                                    <li><a class="dropdown-item" href="#">Customerwise Sales</a></li>
+                                    <li><a class="dropdown-item" href="#">Price Trends</a></li>
+                                    <li><a class="dropdown-item" href="#">MTD</a></li>
+                                    <li><a class="dropdown-item" href="#">QTD</a></li>
+                                    <li><a class="dropdown-item" href="#">YTD</a></li>
+                                    <li><a class="dropdown-item" href="#">Interplant Transfer</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>    
+                        </ul>
+                    </li>
+                </ul>
+            </div> <!-- navbar-collapse.// -->
+        </nav>
+    </div> <!-- container.// -->
+    <div class="video_container">
+        <video autoplay loop muted plays-inline class="background-clip" src="video6143031417833000117.mp4"></video>
+    </div>
+</header> <!-- section-header.// -->
+<div class="powered-by">
+    <a href="https://sriainfotech.com" target="_blank">Powered by Sria & Nxsys</a>
+</div>
+<style>
+    .powered-by {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    /* Position at the right */
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+</style>
+</div>
+
+</body>
+</html>
