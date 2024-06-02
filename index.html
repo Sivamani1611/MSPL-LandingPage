@@ -79,6 +79,17 @@ crossorigin="anonymous"></script>
             width: auto !important;
         }
     }
+    
+    /* Custom styles for checkbox list */
+    .checkbox-dropdown-list {
+        list-style: none; /* Remove default list style */
+        padding: 0;
+        margin: 0;
+    }
+
+    .checkbox-dropdown-list li {
+        margin: 5px 0; /* Adjust margin as needed */
+    }
 </style>
 
 <body class="bg-light">
@@ -97,7 +108,7 @@ crossorigin="anonymous"></script>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Commands</a>
                         <ul class="dropdown-menu">
-                                                    <li class="dropdown-item dropdown">
+                            <li class="dropdown-item dropdown">
                                 <a class="dropdown-toggle" href="#">Start</a>
                             </li>
                             <li class="dropdown-item dropdown">
@@ -177,69 +188,142 @@ crossorigin="anonymous"></script>
                                 <ul class="submenu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Purchase Budget vs Actuals</a></li>
                                     <li><a class="dropdown-item" href="#">Purchase Order Aging Analysis</a></li>
-                                    <li><a class="dropdown-item" href="#">Purchase Requisition Aging Analysis</a></li>
-                                    <li><a class="dropdown-item" href="#">Outstanding Advances</a></li>
-                                    <li><a class="dropdown-item" href="#">Material Type</a></li>
-                                    <li><a class="dropdown-item" href="#">Monthly Price Trends</a></li>
-                                    <li><a class="dropdown-item" href="#">MSME</a></li>
-                                    <li><a class="dropdown-item" href="#">RM Stock Quantity</a></li>
-                                    <li><a class="dropdown-item" href="#">RM open PO Quantity</a></li>
-                                    <li><a class="dropdown-item" href="#">PR to PO open Conversion</a></li>
+                                    <li><a class="dropdown-item" href="#">Consumption Details</a></li>
+                                    <li><a class="dropdown-item" href="#">Opex-Capex Details</a></li>
+                                    <li><a class="dropdown-item" href="#">Procurement KPIs</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-item dropdown">
-                                <a class="dropdown-toggle" href="#">O and M Dashboard</a>
+                                <a class="dropdown-toggle" href="#">Production Dashboard</a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Budget vs Actuals</a></li>
-                                    <li><a class="dropdown-item" href="#">Material Consumption</a></li>
+                                    <li><a class="dropdown-item" href="#">Fixed Cost</a></li>
+                                    <li><a class="dropdown-item" href="#">Variable Cost</a></li>
+                                    <li><a class="dropdown-item" href="#">Total Cost</a></li>
+                                    <li><a class="dropdown-item" href="#">OEE</a></li>
+                                    <li><a class="dropdown-item" href="#">Consumption Norms</a></li>
+                                    <li><a class="dropdown-item" href="#">Breakdown</a></li>
+                                    <li><a class="dropdown-item" href="#">Inventory</a></li>
+                                    <li><a class="dropdown-item" href="#">Equipment Performance</a></li>
+                                    <li><a class="dropdown-item" href="#">Spares</a></li>
+                                    <li><a class="dropdown-item" href="#">Production KPIs</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a class="dropdown-toggle" href="#">Safety Dashboard</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Employee Data</a></li>
+                                    <li><a class="dropdown-item" href="#">Safety Budget</a></li>
+                                    <li><a class="dropdown-item" href="#">Monthly Scorecard</a></li>
+                                    <li><a class="dropdown-item" href="#">Safety Observations</a></li>
+                                    <li><a class="dropdown-item" href="#">Safety Equipment</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-item dropdown">
                                 <a class="dropdown-toggle" href="#">Sales Dashboard</a>
                                 <ul class="submenu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Sales Budget vs Actuals</a></li>
-                                    <li><a class="dropdown-item" href="#">Outstanding Amount</a></li>
-                                    <li><a class="dropdown-item" href="#">Pending Orders</a></li>
-                                    <li><a class="dropdown-item" href="#">Regionwise Sales</a></li>
-                                    <li><a class="dropdown-item" href="#">Area wise sales</a></li>
-                                    <li><a class="dropdown-item" href="#">Customerwise Sales</a></li>
-                                    <li><a class="dropdown-item" href="#">Price Trends</a></li>
-                                    <li><a class="dropdown-item" href="#">MTD</a></li>
-                                    <li><a class="dropdown-item" href="#">QTD</a></li>
-                                    <li><a class="dropdown-item" href="#">YTD</a></li>
-                                    <li><a class="dropdown-item" href="#">Interplant Transfer</a></li>
+                                    <li><a class="dropdown-item" href="#">Order Booking</a></li>
+                                    <li><a class="dropdown-item" href="#">Order Fulfillment</a></li>
+                                    <li><a class="dropdown-item" href="#">Dispatch</a></li>
+                                    <li><a class="dropdown-item" href="#">Transport</a></li>
+                                    <li><a class="dropdown-item" href="#">Vendor Performance</a></li>
+                                    <li><a class="dropdown-item" href="#">Customer Complaint</a></li>
+                                    <li><a class="dropdown-item" href="#">Payment</a></li>
+                                    <li><a class="dropdown-item" href="#">Sales KPIs</a></li>
                                 </ul>
                             </li>
                         </ul>
-                    </li>    
+                    </li>
+                    
+                    <!-- Choose Language Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="chooseLanguageDropdown" data-toggle="dropdown">Choose Language</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <div class="checkbox-dropdown">
+                                    <span>Choose a language:</span>
+                                    <ul class="checkbox-dropdown-list">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="en-US"> English (US)
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="en-GB"> English (UK)
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="fr-FR"> French
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="de-DE"> German
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="es-ES"> Spanish
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="voice" value="zh-CN"> Chinese
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-            </div> <!-- navbar-collapse.// -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_manual.pdf" target="_blank">Help</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-    </div> <!-- container.// -->
-    <div class="video_container">
-        <video autoplay loop muted plays-inline class="background-clip" src="video6143031417833000117.mp4"></video>
     </div>
-</header> <!-- section-header.// -->
-<div class="powered-by">
-    <a href="https://sriainfotech.com" target="_blank">Powered by Sria & Nxsys</a>
-</div>
-<style>
-    .powered-by {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    /* Position at the right */
-    font-size: 14px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: underline;
-}
-</style>
+</header>
+
+<script>
+    $(document).ready(function() {
+        // Ensure only one checkbox can be selected
+        $('.checkbox-dropdown input[type="checkbox"]').on('change', function() {
+            if (this.checked) {
+                $('.checkbox-dropdown input[type="checkbox"]').not(this).prop('checked', false);
+                $('.checkbox-dropdown').removeClass('is-active');
+                var selectedLanguage = $(this).parent().text().trim();
+                $('#chooseLanguageDropdown').text(selectedLanguage);
+            }
+        });
+
+        // Toggle dropdown list on click
+        $('.nav-item .dropdown-toggle').on('click', function(e) {
+            e.preventDefault();
+            var $el = $(this).next('.dropdown-menu');
+            $el.toggleClass('show');
+            if ($el.hasClass('show')) {
+                $('.dropdown-menu.show').not($el).removeClass('show');
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.dropdown-menu, .dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+<div class="video_container">
+    <video autoplay loop muted class="background-clip">
+        <source src="video6143031417833000117.mp4" type="video/mp4">
+    </video>
 </div>
 
 </body>
