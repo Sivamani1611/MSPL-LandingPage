@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="htmlcss bootstrap menu, navbar, mega menu examples" />
+<meta name="description" content="Navigation  menu with submenu examples for any type of project, Bootstrap 4" />  
+
+<title>Demo - Bootstrap multilevel navbar responsive. html code example </title>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+<!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+	//////////////////////// Prevent closing from click inside dropdown
+    $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+    });
+
+    // make it as accordion for smaller screens
+    if ($(window).width() < 992) {
+	  	$('.dropdown-menu a').click(function(e){
+	  		e.preventDefault();
+	        if($(this).next('.submenu').length){
+	        	$(this).next('.submenu').toggle();
+	        }
+	        $('.dropdown').on('hide.bs.dropdown', function () {
+			   $(this).find('.submenu').hide();
+			})
+	  	});
+	}
+	
+}); // jquery end
+</script>
+
+<style type="text/css">
+	@media (min-width: 992px){
+		.dropdown-menu .dropdown-toggle:after{
+			border-top: .3em solid transparent;
+		    border-right: 0;
+		    border-bottom: .3em solid transparent;
+		    border-left: .3em solid;
+		}
+
+		.dropdown-menu .dropdown-menu{
+			margin-left:0; margin-right: 0;
+		}
+
+		.dropdown-menu li{
+			position: relative;
+		}
+		.nav-item .submenu{ 
+			display: none;
+			position: absolute;
+			left:100%; top:-7px;
+		}
+		.nav-item .submenu-left{ 
+			right:100%; left:auto;
+		}
+
+		.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+		.dropdown-menu > li:hover > .submenu{
+			display: block;
+		}
+	}
+</style>
+</head>
+<body class="bg-light">
+
+<header class="section-header py-4">
+
+ <!-- section-header.// -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+
+<div class="container">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <a class="navbar-brand" href="#">MSPL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+
+<ul class="navbar-nav">
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  Commands  </a>
+	    <ul class="dropdown-menu">
+		  <li><a class="dropdown-item" href="#"> Start </a></li>
+		  <li><a class="dropdown-item" href="#"> CFO Dashboard &raquo </a>
+		  	 <ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">CFO Finance KPI's</a></li>
+				<li><a class="dropdown-item" href="#">CFO Inventory KPI's</a></li>
+				<li><a class="dropdown-item" href="#">Expenditure</a></li>
+				<li><a class="dropdown-item" href="#">CFO Details</a></li>
+				<li><a class="dropdown-item" href="#">Current Assests and Liabilities</a></li>
+			 </ul>
+		  </li>
+		  <li><a class="dropdown-item" href="#">Director Project Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Home</a></li>
+				<li><a class="dropdown-item" href="#">Safety</a></li>
+				<li><a class="dropdown-item" href="#">Statuatory Approvals</a></li>
+				<li><a class="dropdown-item" href="#">Major Milestones</a></li>
+				<li><a class="dropdown-item" href="#">Critical Path</a></li>
+				<li><a class="dropdown-item" href="#">Detail Activities</a></li>
+				<li><a class="dropdown-item" href="#">Engineering Progress</a></li>
+				<li><a class="dropdown-item" href="#">Cost Overview</a></li>
+				<li><a class="dropdown-item" href="#">Procurement Progress</a></li>
+				<li><a class="dropdown-item" href="#">Manning Liquidation</a></li>
+				<li><a class="dropdown-item" href="#">Contractor Performance</a></li>
+				<li><a class="dropdown-item" href="#">Manpower</a></li>
+				<li><a class="dropdown-item" href="#">Construction</a></li>
+				<li><a class="dropdown-item" href="#">Learning Records</a></li>
+				<li><a class="dropdown-item" href="#">Issue Register</a></li>
+				<li><a class="dropdown-item" href="#">Site Progress Photo</a></li>
+			</ul>
+		</li>    
+	   
+
+		<li><a class="dropdown-item" href="#">Directors Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Sales Summary</a></li>
+				<li><a class="dropdown-item" href="#">Production</a></li>
+				<li><a class="dropdown-item" href="#">Inventory KPIs</a></li>
+				<li><a class="dropdown-item" href="#">Finance KPIs</a></li>
+				<li><a class="dropdown-item" href="#">Purchase KPIs</a></li>
+			</ul>
+	   </li>
+
+		<li><a class="dropdown-item" href="#">HR Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Employee Headcount</a></li>
+				<li><a class="dropdown-item" href="#">Employee Seperation</a></li>
+				<li><a class="dropdown-item" href="#">HR Budget vs Actuals</a></li>
+			</ul>
+	   </li>
+
+		<li><a class="dropdown-item" href="#">JMDR &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Pellet</a></li>
+				<li><a class="dropdown-item" href="#">Marketing</a></li>
+				<li><a class="dropdown-item" href="#">Logistics</a></li>
+				<li><a class="dropdown-item" href="#">JMDR P and L</a></li>
+				<li><a class="dropdown-item" href="#">PBT Level Summary</a></li>
+			</ul>
+	   </li>
+
+		<li><a class="dropdown-item" href="#">JMDS &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Production Pellet</a></li>
+				<li><a class="dropdown-item" href="#">Production Mining</a></li>
+				<li><a class="dropdown-item" href="#">Procurement</a></li>
+				<li><a class="dropdown-item" href="#">Sales</a></li>
+				<li><a class="dropdown-item" href="#">Expenses</a></li>
+				<li><a class="dropdown-item" href="#">Ask Rate</a></li>
+				<li><a class="dropdown-item" href="#">JMDS P and L</a></li>
+				<li><a class="dropdown-item" href="#">Project Status</a></li>
+			</ul>
+	   </li>
+
+		<li><a class="dropdown-item" href="#">Procurement Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Purchase Budget vs Actuals</a></li>
+				<li><a class="dropdown-item" href="#">Purchase Order Aging Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Purchase Requsition Aging Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Outstanding Advances</a></li>
+				<li><a class="dropdown-item" href="#">Material Type</a></li>
+				<li><a class="dropdown-item" href="#">Monthly Price Trends</a></li>
+				<li><a class="dropdown-item" href="#">MSME</a></li>
+				<li><a class="dropdown-item" href="#">RM Stock Quantity</a></li>
+				<li><a class="dropdown-item" href="#">RM open PO Quantity</a></li>
+				<li><a class="dropdown-item" href="#">PR to PO open Conversion</a></li>
+			</ul>
+	  </li>
+
+		<li><a class="dropdown-item" href="#">Production Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Production Budget vs Actuals</a></li>
+				<li><a class="dropdown-item" href="#">Purchase Running Hours</a></li>
+				<li><a class="dropdown-item" href="#">Raw Material Consumption and Production</a></li>
+				<li><a class="dropdown-item" href="#">Plant Product Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Raw Material Consumption</a></li>
+				<li><a class="dropdown-item" href="#">HSD Consumption</a></li>
+				<li><a class="dropdown-item" href="#">IOBP Process</a></li>
+			</ul>
+	   </li>
+
+		<li><a class="dropdown-item" href="#">Sales Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Budget vs Actual Sales</a></li>
+				<li><a class="dropdown-item" href="#">Sales Revenue</a></li>
+				<li><a class="dropdown-item" href="#">Inventory Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Customer Sales Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Regional Sales Performance</a></li>
+			</ul>
+		</li>
+		<li><a class="dropdown-item" href="#">Wind Sales Dashboard &raquo</a>
+			<ul class="submenu dropdown-menu">
+				<li><a class="dropdown-item" href="#">Budget vs Actual Sales Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Customer Sales Analysis</a></li>
+				<li><a class="dropdown-item" href="#">Regional Sales Performance</a></li>
+				<li><a class="dropdown-item" href="#">Sales Dashboard Wind MTD</a></li>
+				<li><a class="dropdown-item" href="#">Sales Dashboard Wind YTD</a></li>
+			</ul>
+		</li>
+	    </ul>
+	</li>
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="chooseLanguageDropdown" data-toggle="dropdown">Choose Language</a>
+		<ul class="dropdown-menu" id="voiceTypes">
+			<!-- Dynamic checkboxes will be added here -->
+		</ul>
+	</li>
+	<script>
+		// Define the voice_types array
+		var voice_types = ["Microsoft David - English (United States)","Microsoft Ravi - English (India)","Microsoft Heera - English (India)","Microsoft Mark - English (United States)","Microsoft Zira - English (United States)","Google Deutsch","Google US English","Google UK English Female","Google UK English Male","Google español","Google español de Estados Unidos","Google français","Google हिन्दी","Google Bahasa Indonesia","Google italiano","Google 日本語","Google 한국의","Google Nederlands","Google polski","Google português do Brasil","Google русский","Google 普通话（中国大陆）","Google 粤語（香港）","Google 國語（臺灣）"];
+		
+		// Get the voiceTypes ul element
+		var voiceTypesUl = document.getElementById("voiceTypes");
+	
+		// Get the dropdown toggle element
+		var dropdownToggle = document.getElementById("chooseLanguageDropdown");
+	
+		// Variable to store the currently selected checkbox
+		var selectedCheckbox = null;
+	
+		// Loop through the voice_types array and generate the checkboxes
+		for (var i = 0; i < voice_types.length; i++) {
+			var voiceType = voice_types[i];
+	
+			// Create the li element
+			var li = document.createElement("li");
+	
+			// Create the label element
+			var label = document.createElement("label");
+	
+			// Create the checkbox element
+			var checkbox = document.createElement("input");
+			checkbox.type = "checkbox";
+			checkbox.value = voiceType;
+			checkbox.name = "voice";
+	
+			// Set the label text
+			label.appendChild(checkbox);
+			label.appendChild(document.createTextNode(voiceType));
+	
+			// Append the label to the li element
+			li.appendChild(label);
+	
+			// Append the li element to the voiceTypes ul element
+			voiceTypesUl.appendChild(li);
+	
+			// Add event listener to the checkbox
+			checkbox.addEventListener('change', function() {
+				// Uncheck the previously selected checkbox
+				if (selectedCheckbox && selectedCheckbox !== this) {
+					selectedCheckbox.checked = false;
+				}
+	
+				// Update the selectedCheckbox variable
+				selectedCheckbox = this;
+	
+				// Update the dropdown toggle text with the selected option
+				dropdownToggle.textContent = this.value;
+			});
+		}
+	</script>
+	
+	<style>
+		.checkbox-dropdown {
+		width: 200px;
+		border: 1px solid #aaa;
+		padding: 10px;
+		position: relative;
+		margin: 0 auto;
+		
+		user-select: none;
+	}
+	
+	/* Display CSS arrow to the right of the dropdown text */
+	.checkbox-dropdown:after {
+		content:'';
+		height: 0;
+		position: absolute;
+		width: 0;
+		border: 6px solid transparent;
+		border-top-color: #000;
+		top: 50%;
+		right: 10px;
+		margin-top: -3px;
+	}
+	
+	/* Reverse the CSS arrow when the dropdown is active */
+	.checkbox-dropdown.is-active:after {
+		border-bottom-color: #000;
+		border-top-color: #fff;
+		margin-top: -9px;
+	}
+	
+	.checkbox-dropdown-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 100%; /* align the dropdown right below the dropdown text */
+		border: inherit;
+		border-top: none;
+		left: -1px; /* align the dropdown to the left */
+		right: -1px; /* align the dropdown to the right */
+		opacity: 0; /* hide the dropdown */
+	   
+		transition: opacity 0.4s ease-in-out;
+		height: 300px;
+		overflow: scroll;
+		overflow-x: hidden;
+		pointer-events: none; /* avoid mouse click events inside the dropdown */
+	}
+	.is-active .checkbox-dropdown-list {
+		opacity: 1; /* display the dropdown */
+		pointer-events: auto; /* make sure that the user still can select checkboxes */
+	}
+	
+	.checkbox-dropdown-list li label {
+		display: block;
+		border-bottom: 1px solid silver;
+		padding: 10px;
+	   
+		transition: all 0.2s ease-out;
+	}
+	
+	.checkbox-dropdown-list li label:hover {
+		background-color: #555;
+		color: white;
+	}
+	
+	.dropdown-menu {
+        max-height: 200px; /* Adjust the max height as needed */
+        overflow-y: auto;
+    }
+
+	</style>
+			
+		</ul>
+	</div></ul>
+
+
+<ul class="navbar-nav ml-auto">
+	<li class="nav-item dropdown">
+		<a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Help </a>
+	    <ul class="dropdown-menu dropdown-menu-right">
+		<!--  <li><a class="dropdown-item" href="#"> Dropdown item 1</a></li>
+		  <li><a class="dropdown-item" href="#"> Dropdown item 2 </a></li>
+		  <li><a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 3 </a>
+		  	 <ul class="submenu submenu-left dropdown-menu">
+			    <li><a class="dropdown-item" href="">Submenu item 1</a></li>
+			    <li><a class="dropdown-item" href="">Submenu item 2</a></li>
+			    <li><a class="dropdown-item" href="">Submenu item 3</a></li>
+			    <li><a class="dropdown-item" href="">Submenu item 4</a></li>
+			 </ul>
+		  </li>
+		  <li><a class="dropdown-item" href="#"> Dropdown item 4 </a></li>
+	    </ul> -->
+	</li>
+
+</ul>
+
+  </div> <!-- navbar-collapse.// -->
+
+</nav>
+
+
+</div><!-- container //  -->
+</header>
+
+<!-- Fluid Container for video player -->
+<div class="video_container">
+    <video autoplay loop muted class="background-clip">
+        <source src="video6143031417833000117.mp4" type="video/mp4">
+    </video>
+</div>
+</body>
+</html>
