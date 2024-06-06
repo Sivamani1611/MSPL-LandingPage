@@ -307,10 +307,10 @@ html { font-size: 62.5% }
     background-color: #e0e0e0; /* Highlight background color on hover */
 }
 
-.powered-by {
+/* .powered-by {
   position: absolute;
   bottom: 10px;
-  right: 10px; /* Position at the right */
+  right: 10px; 
   font-size: 14px;
   color: #fff;
   text-transform: uppercase;
@@ -318,4 +318,4 @@ html { font-size: 62.5% }
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
-}
+} */
