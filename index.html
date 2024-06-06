@@ -1,0 +1,705 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="htmlcss bootstrap menu, navbar, mega menu examples" />
+    <meta name="description" content="Navigation menu with submenu examples for any type of project, Bootstrap 4" />
+
+    <title>MSPL </title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        type="text/javascript"></script>
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script> -->
+
+    <style type="text/css">
+        @media (min-width: 50px) {
+            .dropdown-menu .dropdown-toggle:after {
+                border-top: .3em solid transparent;
+                border-right: 0;
+                border-bottom: .3em solid transparent;
+                border-left: .3em solid;
+            }
+
+            .dropdown-menu .dropdown-menu {
+                margin-left: 0;
+                margin-right: 0;
+                /* margin: 0px !important; */
+            }
+
+            .dropdown-menu {
+                padding: 0.8rem 0;
+            }
+
+            .dropdown-menu li {
+                position: relative;
+            }
+
+            .nav-item .submenu {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: -7px;
+            }
+
+            .nav-item .submenu-left {
+                right: 100%;
+                left: auto;
+            }
+
+            .dropdown-menu>li:hover {
+                background-color: #f1f1f1
+            }
+
+            .dropdown-menu>li:hover>.submenu {
+                display: block;
+            }
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        /* .help-dropdown {
+            display: none;
+        }
+
+        .nav-item:hover .help-dropdown {
+            display: block;
+        } */
+
+        /* .help-dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            z-index: 1;
+            
+        }
+
+        .nav-item:hover .help-dropdown {
+            display: block;
+        } */
+
+        /* Display the dropdown menu below the "Help" link */
+        /* Position the dropdown menu to the right of the "Help" button */
+
+        .help.dropdown-menu {
+            left: 1000 !important;
+        }
+
+        .help-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            /* Adjust left position to move the dropdown to the right */
+            left: auto;
+            right: 0;
+        }
+
+        /* Show the dropdown menu on hover of the "Help" link */
+        .help:hover .help-dropdown {
+            display: block;
+        }
+
+        /* Position the dropdown menu to the right of the "Help" button */
+        .help-dropdown .dropdown-menu {
+            left: auto;
+            right: 0;
+            top: 0;
+            padding: 5rem 0 !important;
+            margin: 0px !important;
+        }
+
+        .dropdown {
+            margin: 0px !important;
+        }
+
+        /* .help {
+    margin-right: 100px !important;
+} */
+
+        /* .show {
+    left: 0px !important;
+    display: block !important;
+} */
+
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* background-color: white; */
+            /* opacity: 0.8; */
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar-dark .navbar-brand,
+        .nav-link {
+            color: black !important;
+            font-weight: 700 !important;
+        }
+
+        .nav-link {
+            margin-right: 50px;
+        }
+
+        .video_container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        .background-clip {
+            width: 100%;
+        }
+
+        .logo {
+            height: 40px;
+            width: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .dropdown-toggle {
+            color: black !important;
+        }
+
+        /* Background video switching to portrait */
+        @media screen and (orientation: portrait) {
+            .background-clip {
+                height: 100vh !important;
+                width: auto !important;
+            }
+        }
+
+        /* Custom styles for checkbox list */
+        .checkbox-dropdown-list {
+            list-style: none;
+            /* Remove default list style */
+            padding: 0;
+            margin: 0;
+        }
+
+        .checkbox-dropdown-list li {
+            margin: 5px 0;
+            /* Adjust margin as needed */
+        }
+
+        .dropdown-item1 {
+            width: 50px !important;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        #myBtn,
+        #usermanual {
+            background-color: white;
+            border: 0;
+            outline: none;
+        }
+
+        #myBtn:hover,
+        #usermanual:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+<body class="bg-light">
+
+    <header class="section-header">
+        <!-- section-header.// -->
+        <!-- ========================= SECTION CONTENT ========================= -->
+        <div class="fluid-container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="https://baldota.co.in/mspl-limited" target="_blank">
+                    <img src="mspl_logo.png" class="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Commands</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item dropdown">
+                                    <a href="#">Start</a>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">CFO Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">CFO Finance KPI's</a></li>
+                                        <li><a class="dropdown-item" href="#">CFO Inventory KPI's</a></li>
+                                        <li><a class="dropdown-item" href="#">Expenditure</a></li>
+                                        <li><a class="dropdown-item" href="#">CFO Details</a></li>
+                                        <li><a class="dropdown-item" href="#">Current Assets and Liabilities</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Director Project Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Home</a></li>
+                                        <li><a class="dropdown-item" href="#">Safety</a></li>
+                                        <li><a class="dropdown-item" href="#">Statutory Approvals</a></li>
+                                        <li><a class="dropdown-item" href="#">Major Milestones</a></li>
+                                        <li><a class="dropdown-item" href="#">Critical Path</a></li>
+                                        <li><a class="dropdown-item" href="#">Detail Activities</a></li>
+                                        <li><a class="dropdown-item" href="#">Engineering Progress</a></li>
+                                        <li><a class="dropdown-item" href="#">Cost Overview</a></li>
+                                        <li><a class="dropdown-item" href="#">Procurement Progress</a></li>
+                                        <li><a class="dropdown-item" href="#">Manning Liquidation</a></li>
+                                        <li><a class="dropdown-item" href="#">Contractor Performance</a></li>
+                                        <li><a class="dropdown-item" href="#">Manpower</a></li>
+                                        <li><a class="dropdown-item" href="#">Construction</a></li>
+                                        <li><a class="dropdown-item" href="#">Learning Records</a></li>
+                                        <li><a class="dropdown-item" href="#">Issue Register</a></li>
+                                        <li><a class="dropdown-item" href="#">Site Progress Photo</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Directors Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Sales Summary</a></li>
+                                        <li><a class="dropdown-item" href="#">Production</a></li>
+                                        <li><a class="dropdown-item" href="#">Inventory KPIs</a></li>
+                                        <li><a class="dropdown-item" href="#">Finance KPIs</a></li>
+                                        <li><a class="dropdown-item" href="#">Purchase KPIs</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">HR Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Employee Headcount</a></li>
+                                        <li><a class="dropdown-item" href="#">Employee Separation</a></li>
+                                        <li><a class="dropdown-item" href="#">HR Budget vs Actuals</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">JMDR</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Pellet</a></li>
+                                        <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                        <li><a class="dropdown-item" href="#">Logistics</a></li>
+                                        <li><a class="dropdown-item" href="#">JMDR P and L</a></li>
+                                        <li><a class="dropdown-item" href="#">PBT Level Summary</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">JMDS</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Production Pellet</a></li>
+                                        <li><a class="dropdown-item" href="#">Production Mining</a></li>
+                                        <li><a class="dropdown-item" href="#">Procurement</a></li>
+                                        <li><a class="dropdown-item" href="#">Sales</a></li>
+                                        <li><a class="dropdown-item" href="#">Expenses</a></li>
+                                        <li><a class="dropdown-item" href="#">Ask Rate</a></li>
+                                        <li><a class="dropdown-item" href="#">JMDS P and L</a></li>
+                                        <li><a class="dropdown-item" href="#">Project Status</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Procurement Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Purchase Budget vs Actuals</a></li>
+                                        <li><a class="dropdown-item" href="#">Purchase Order Aging Analysis</a></li>
+                                        <li><a class="dropdown-item" href="#">Consumption Details</a></li>
+                                        <li><a class="dropdown-item" href="#">Opex-Capex Details</a></li>
+                                        <li><a class="dropdown-item" href="#">Procurement KPIs</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Production Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Fixed Cost</a></li>
+                                        <li><a class="dropdown-item" href="#">Variable Cost</a></li>
+                                        <li><a class="dropdown-item" href="#">Total Cost</a></li>
+                                        <li><a class="dropdown-item" href="#">OEE</a></li>
+                                        <li><a class="dropdown-item" href="#">Consumption Norms</a></li>
+                                        <li><a class="dropdown-item" href="#">Breakdown</a></li>
+                                        <li><a class="dropdown-item" href="#">Inventory</a></li>
+                                        <li><a class="dropdown-item" href="#">Equipment Performance</a></li>
+                                        <li><a class="dropdown-item" href="#">Spares</a></li>
+                                        <li><a class="dropdown-item" href="#">Production KPIs</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Safety Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Employee Data</a></li>
+                                        <li><a class="dropdown-item" href="#">Safety Budget</a></li>
+                                        <li><a class="dropdown-item" href="#">Monthly Scorecard</a></li>
+                                        <li><a class="dropdown-item" href="#">Safety Observations</a></li>
+                                        <li><a class="dropdown-item" href="#">Safety Equipment</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a class="dropdown-toggle" href="#">Sales Dashboard</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Sales Budget vs Actuals</a></li>
+                                        <li><a class="dropdown-item" href="#">Order Booking</a></li>
+                                        <li><a class="dropdown-item" href="#">Order Fulfillment</a></li>
+                                        <li><a class="dropdown-item" href="#">Dispatch</a></li>
+                                        <li><a class="dropdown-item" href="#">Transport</a></li>
+                                        <li><a class="dropdown-item" href="#">Vendor Performance</a></li>
+                                        <li><a class="dropdown-item" href="#">Customer Complaint</a></li>
+                                        <li><a class="dropdown-item" href="#">Payment</a></li>
+                                        <li><a class="dropdown-item" href="#">Sales KPIs</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Choose Language Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="chooseLanguageDropdown"
+                                data-toggle="dropdown">Choose Language</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <div class="checkbox-dropdown">
+                                        <span>Choose a language:</span>
+                                        <ul class="checkbox-dropdown-list" id="selectedLanguage">
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="en-US"> English (US)
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="en-GB"> English (UK)
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="fr-FR"> French
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="de-DE"> German
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="es-ES"> Spanish
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="voice" value="zh-CN"> Chinese
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Help</a>
+                            <ul class="dropdown-menu help-dropdown">
+                                <li class="dropdown-item dropdown-item1 dropdown">
+                                    <a href="#">One</a>
+                                </li>
+                                <li class="dropdown-item dropdown-item1 dropdown">
+                                    <a href="#">Two</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link help dropdown-toggle" href="#" data-toggle="dropdown">Help</a>
+                            <ul class="dropdown-menu help-dropdown">
+                                <li class="dropdown-item dropdown">
+                                    <a href="#">One</a>
+                                </li>
+                                <li class="dropdown-item dropdown">
+                                    <a href="#">.</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <!-- "Help" Navigation Link -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle help" href="#" id="navbarDropdownHelp" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Help</a>
+                            <ul class="dropdown-menu help-dropdown" aria-labelledby="navbarDropdownHelp">
+                                <li class="dropdown-item dropdown">
+                                    <!-- <button type="button" class="tcs-button"
+                                        data-toggle="modal" data-target="#exampleModal">
+                                        Redeem Now
+                                    </button> -->
+                                    <button id="myBtn">Contact Us</button>
+                                </li>
+
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2>Contact MSPL</h2>
+                                            <span class="close">&times;</span>
+
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <p> Email : mspl@microsoft.com</p>
+                                            <p> Phone : +91 9753102468</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="tcs-modal-title" id="exampleModalLabel">Gift Voucher</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png"
+                                                    class="w-100" />
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <li class="dropdown-item dropdown">
+                                    <button id="usermanual">User Manual</button>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        $(document).ready(function () {
+            // Ensure only one checkbox can be selected
+            $('.checkbox-dropdown input[type="checkbox"]').on('change', function () {
+                if (this.checked) {
+                    $('.checkbox-dropdown input[type="checkbox"]').not(this).prop('checked', false);
+                    $('.checkbox-dropdown').removeClass('is-active');
+                    var selectedLanguage = $(this).parent().text().trim();
+                    $('#chooseLanguageDropdown').text(selectedLanguage);
+                }
+            });
+
+            // Toggle dropdown list on click
+            $('.nav-item .dropdown-toggle').on('click', function (e) {
+                e.preventDefault();
+                var $el = $(this).next('.dropdown-menu');
+                $el.toggleClass('show');
+                if ($el.hasClass('show')) {
+                    $('.dropdown-menu.show').not($el).removeClass('show');
+                }
+            });
+
+            // Show dropdown list on hover
+            $('.nav-item.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').addClass('show');
+            }, function () {
+                $(this).find('.dropdown-menu').removeClass('show');
+            });
+
+            // Show dropdown list on hover for Help
+            $('.navbar-nav .nav-item:last-child').hover(function () {
+                $(this).find('.dropdown-menu').addClass('show');
+            }, function () {
+                $(this).find('.dropdown-menu').removeClass('show');
+            });
+
+            // Close dropdowns when clicking outside
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.dropdown-menu, .dropdown-toggle').length) {
+                    $('.dropdown-menu').removeClass('show');
+                }
+            });
+        });
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][name="voice"]');
+
+        // Add event listener to each checkbox
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Get the value of the selected checkbox
+                const selectedValue = checkbox.value;
+                console.log(`Selected language: ${selectedValue}`);
+                localStorage.setItem('selectedLanguage', selectedValue);
+                // Uncheck all other checkboxes
+                checkboxes.forEach(box => {
+                    if (box !== checkbox) {
+                        box.checked = false;
+                    }
+                });
+            });
+        });
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('usermanual').addEventListener('click', function () {
+            window.open('usermanual-MSPL.pdf', '_blank');
+        });
+
+
+    </script>
+
+    <div class="video_container">
+        <video autoplay loop muted class="background-clip">
+            <source src="video6143031417833000117.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</body>
+
+</html>
